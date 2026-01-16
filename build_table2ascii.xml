@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:dita="http://dita-ot.sourceforge.net" 
+    xmlns:if="ant:if" xmlns:unless="ant:unless" 
+    name="run-table2ascii">
+    
+    <target name="table2ascii" description="Convert intermediate table markup to text" depends="check-node, display-node-unavailable, process-all-files"/>
+    
+    <!-- Detect if node available, which is used to generate tables and syntax diagrams in ASCII art format -->
+    <target name="check-node">
+        <property environment="env" /> 
+        <available file="node"  
+                   filepath="${env.PATH}"  
+                   property="node.in.path"/>
+        
+        <available file="${env.NODE_BINARY_PATH}"  
+                   property="node.as.env.var"/>
+        
+        <condition property="node.path" value="node">
+            <isset property="node.in.path"/>
+        </condition>
+        
+        <condition property="node.path" value="${env.NODE_BINARY_PATH}">
+            <and>
+                <not><isset property="node.in.path"/></not>
+                <isset property="node.as.env.var"/>
+            </and>
+        </condition>
+        
+        <condition property="skip-text-table" value="true">
+            <not><isset property="node.path"/></not>
+        </condition>
+        
+    </target>
+    
+    <target name="display-node-unavailable" if="skip-text-table">
+        <echo>WARNING: Node not found in the path. An error will be inserted instead of the text table.</echo>
+        <echo>You can either install node, or uninstall this plugin.</echo>
+    </target>
+    
+    <target name="process-all-files" description="Convert intermediate table markup to text" unless="skip-text-table">
+        <path id="table.files.in.temp.dir">
+            <fileset dir="${dita.temp.dir}">
+                <include name="**/*.tbl" />
+                <include name="**/*.syn" />
+            </fileset>
+        </path>
+        
+        <foreach target="run-table2ascii" param="fileName" inheritall="true">
+            <path refid="table.files.in.temp.dir"/>
+        </foreach>
+        
+        <!-- Convert the Win-style table output to use Unix line ends, to match the intermediate topic it will merge with -->
+        <replaceregexp match="\n" replace="&#10;" flags="g" encoding="utf-8">
+            <fileset dir="${dita.temp.dir}" includes="**/*.tblX"/>
+        </replaceregexp>
+    </target>
+
+    <target name="run-table2ascii">
+        <!-- If text.linelength is initialized in Ant, the value does not cascade here, so reset.
+            Any value passed in from command line will still be used. -->
+        <property name="text.linelength" value="65"/>
+        <echo>Transforming ${fileName} to ${fileName}X</echo>
+        <exec executable="${node.path}" dir="${dita.plugin.org.dita.text-asciiart.dir}/ts/dist" resolveexecutable="true" failifexecutionfails="false">
+            <arg line="dita-to-text.js"/>
+            <arg line="${fileName}"/>
+            <arg line="${fileName}X"/>
+            <arg line="--line-length=${text.linelength}"/>
+            <arg line="--no-tm=${args.text.notm}"/>
+        </exec>
+        <available file="${fileName}${table.codepage}X" property="generated.calstable" value="true"/>
+        <delete file="${fileName}X" if:set="generated.calstable" failonerror="false"/>
+    </target>
+
+</project>

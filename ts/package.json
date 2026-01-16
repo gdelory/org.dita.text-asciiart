@@ -1,0 +1,27 @@
+{
+  "name": "table2ascii",
+  "version": "1.0.0",
+  "description": "DITA table to ASCII-art generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && npm run build-bundle",
+    "build-bundle": "npx esbuild src/dita-to-text.ts --bundle --platform=node --outfile=dist/dita-to-text.js",
+    "build-sea": "node --experimental-sea-config sea.json && cp $(command -v node) dist/dita-to-text && npx postject dist/dita-to-text NODE_SEA_BLOB dist/dita-to-text.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2",
+    "dev": "node -r ts-node/register src/dita-to-text.ts",
+    "debug": "node --inspect --inspect-brk -r ts-node/register src/dita-to-text.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guillaume Delory",
+  "dependencies": {
+    "align-text": "^1.0.2",
+    "fast-xml-parser": "^5.2.5"
+  },
+  "devDependencies": {
+    "@types/align-text": "^1.0.4",
+    "@types/node": "^24.1.0",
+    "esbuild": "^0.25.9",
+    "postject": "^1.0.0-alpha.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

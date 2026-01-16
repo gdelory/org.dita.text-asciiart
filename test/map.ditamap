@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map
+ PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="d292aB" xml:lang="en-us">
+  <title><keyword>Test cases for table</keyword></title>
+  <topicref href="tables-test.dita" />
+  <topicref href="simpletables-test.dita" />
+  <topicref href="syntaxdiagram.dita" />
+</map>

@@ -1,0 +1,4 @@
+test/output*
+test/temp
+ts/node_modules
+ts/dist/dita-to-text.blob

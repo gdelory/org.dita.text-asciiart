@@ -1,0 +1,1604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+ PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="table-test" xml:lang="en-us">
+<title>Test tables</title>
+<shortdesc>This topics test all type of tables. </shortdesc>
+<body>
+<section>
+<title>Alignment tests</title>
+<table frame="all" rowsep="1" colsep="1" id="table_cbz_lql_2gc"><title>no alignment
+test</title><desc>We expect all columns to be left/top aligned, since there is no align and vertical
+align set anywhere.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie. Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_cvb_czz_dgc"><title>tgroup alignment center
+test</title><desc>We expect all columns to be centered.</desc><tgroup cols="3" align="center">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_mwc_mzz_dgc"><title>alignment overwritten on
+colspec test</title><desc>We expect all columns to be aligned differently, although align is set to
+center on the tgroup element.</desc><tgroup cols="3" align="center">
+<colspec colnum="1" colname="c1" colwidth="1*" align="left"/>
+<colspec colnum="2" colname="c2" colwidth="1*" align="center"/>
+<colspec colnum="3" colname="c3" colwidth="1*" align="right"/>
+<thead>
+<row>
+<entry>Left aligned</entry>
+<entry>Center aligned</entry>
+<entry>Right aligned</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_a3f_szz_dgc"><title>alignment <b>only</b> on
+colspec test</title><desc>We expect all columns to be aligned differently.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*" align="left"/>
+<colspec colnum="2" colname="c2" colwidth="1*" align="center"/>
+<colspec colnum="3" colname="c3" colwidth="1*" align="right"/>
+<thead>
+<row>
+<entry>Left aligned</entry>
+<entry>Center aligned</entry>
+<entry>Right aligned</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_xfj_sc1_2gc"><title>thead valign middle
+test</title><desc>We expect the first row (head) to be vertically middle aligned.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead valign="middle">
+<row>
+<entry>Column 1 with more text to make sure the other 2 headers can be properly centered
+vertically</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_ybf_bd1_2gc"><title>thead valign bottom
+test</title><desc>We expect the first row (head) to be vertically bottom aligned.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead valign="bottom">
+<row>
+<entry>Column 1 with more text to make sure the other 2 headers can be properly centered
+vertically</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_vrs_2d1_2gc"><title>tbody valign middle
+test</title><desc>We expect the body rows (all expect first) to be vertically middle
+align.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1 some more text to check where the other cells in this row are aligned</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody valign="middle">
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet
+risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_ew4_jd1_2gc"><title>tbody valign bottom
+test</title><desc>We expect the body rows (all expect first) to be vertically bottom align. We also
+left/center/right centered each column to test combination of align and valign.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*" align="left"/>
+<colspec colnum="2" colname="c2" colwidth="1*" align="center"/>
+<colspec colnum="3" colname="c3" colwidth="1*" align="right"/>
+<thead>
+<row>
+<entry>Column 1 some more text to check where the other cells in this row are aligned. Should be
+left aligned.</entry>
+<entry>Col 2. Should be centered.</entry>
+<entry>C 3. Should be right aligned</entry>
+</row>
+</thead>
+<tbody valign="bottom">
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet
+risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla
+interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere
+ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_xxv_j4l_2gc"><title>row valign middle
+test</title><desc>We expect the row (indicated as such) to be vertically middle align.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3.</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row valign="middle">
+<entry>This row is vertically middle aligned. Mauris non nulla interdum, laoreet risus a, posuere
+ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet
+risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla
+interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>This row is vertically middle aligned.</entry>
+<entry>This row is vertically middle aligned.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_d15_c4l_2gc"><title>row valign bottom
+test</title><desc>We expect the row (indicated as such) to be vertically bottom align.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row valign="bottom">
+<entry>This row is vertically bottom aligned. Mauris non nulla interdum, laoreet risus a, posuere
+ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet
+risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla
+interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>This row is vertically bottom aligned.</entry>
+<entry>This row is vertically bottom aligned.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_plw_l4l_2gc"><title>entry valign middle
+test</title><desc>We expect the cell (indicated as such) to be vertically middle
+align.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet
+risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla
+interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere
+ipsum.</entry>
+<entry valign="middle">This cell is vertically middle aligned.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_alc_r4l_2gc"><title>entry valign bottom
+test</title><desc>We expect the cell (indicated as such) to be vertically bottom
+align.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. usce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet
+risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere ipsum. Mauris non nulla
+interdum, laoreet risus a, posuere ipsum. Mauris non nulla interdum, laoreet risus a, posuere
+ipsum.</entry>
+<entry valign="bottom">This cell is vertically bottom aligned.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+</section>
+<section>
+<title>Separator tests</title>
+<table frame="all" rowsep="0" colsep="1" id="table_gf4_z11_2gc"><title>no row separator on table
+test</title><desc>We expect no row separator on the whole table.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="0" id="table_t3g_rb1_2gc"><title>no col separator on table
+test</title><desc>We expect no column separator on the whole table.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="0" colsep="0" id="table_zs2_vb1_2gc"><title>no col and row separator on
+table test</title><desc>We expect no row nor column separator on the whole table.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_j3k_fc1_2gc"><title>no row separator on tgroup
+test</title><desc>We expect no row separator on the whole table.</desc><tgroup cols="3" rowsep="0">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_k3k_fc1_2gc"><title>no col separator on tgroup
+test</title><desc>We expect no column separator on the whole table.</desc><tgroup cols="3"
+colsep="0">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_l3k_fc1_2gc"><title>no col and row separator on
+tgroup test</title><desc>We expect no row nor column separator on the whole table.</desc><tgroup
+cols="3" rowsep="0" colsep="0">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_qnr_bj1_2gc"><title>no row separator on 2 rows
+test</title><desc>We expect no row separator on two rows (indicated as such with text). No row
+separator should apply to the bottom line, not the upper one.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row rowsep="0">
+<entry>This row as rowsep set to 0.</entry>
+<entry>This row as rowsep set to 0.</entry>
+<entry>This row as rowsep set to 0.</entry>
+</row>
+<row rowsep="0">
+<entry>This row as rowsep set to 0 too.</entry>
+<entry>This row as rowsep set to 0 too.</entry>
+<entry>This row as rowsep set to 0 too.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_lcy_gj1_2gc"><title>no col separator on 2 cells
+test</title><desc>We expect the two cells (indicated as such) to have no column separator. Note that
+it should apply only on the right separator, and have no effect if the cell is the last of the
+row.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry colsep="0">This row as colsep set to 0.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry colsep="0">This row as colsep set to 0, but should still have a right column separator since
+it's the edge of the table.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry colsep="0">This row as colsep set to 0.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_kfp_l2g_2gc"><title>no row separator on 2 cells
+test</title><desc>We expect the two cells (indicated as such) to have no row separator. Note that it
+should apply only on the bottom separator, and have no effect if the cell is in the last row of the
+table.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry rowsep="0">This cell has rowsep set to 0.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry colsep="0">Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry rowsep="0">This cell has rowsep set to 0.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry rowsep="0">This cell has rowsep set to 0, but should still have a row separator since it's in
+the last row.</entry>
+</row>
+</tbody>
+</tgroup></table>
+</section>
+<section>
+<title>Column width tests</title>
+<table frame="all" rowsep="1" colsep="1" id="table_xr1_dpl_2gc"><title>no colwidth property
+test</title><desc>We expect all columns to be the same width, since no colwidth was set on the
+colspec.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1"/>
+<colspec colnum="2" colname="c2"/>
+<colspec colnum="3" colname="c3"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_u4m_npl_2gc"><title>all colwidth to 1*
+test</title><desc>We expect all columns to be the same width, since they all had proportional size
+of 1* set on the colspec/colwidth attribute.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>Ut hendrerit nisi ut vehicula viverra.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_rj2_spl_2gc"><title>different proportional col
+width test</title><desc>We expect the second column to be twice larger than the two others, since 2*
+is set on its colwidth.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="2*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>This column should be twice larger then the others.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_vzh_zpl_2gc"><title>different proportional col
+width test</title><desc>We expect the second column to be twice larger than the first (2*), and the
+third to be 3 times larger than the first (3*).</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="2*"/>
+<colspec colnum="3" colname="c3" colwidth="3*"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>This column should be twice larger than the first one.</entry>
+<entry>This column should be three times larger than the first one.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_snr_tql_2gc"><title>different fixed col width
+test</title><desc>We expect the second column to be twice larger than the first (200 vs 100), and
+the third to be 3 times larger than the first (300).</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="100"/>
+<colspec colnum="2" colname="c2" colwidth="200"/>
+<colspec colnum="3" colname="c3" colwidth="300"/>
+<thead>
+<row>
+<entry>Column 1</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</entry>
+<entry>This column should be twice larger than the first one.</entry>
+<entry>This column should be three times larger than the first one.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Maecenas vestibulum nec ante ut molestie.</entry>
+<entry>Donec egestas nisl at eros ultrices suscipit.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Pellentesque et porttitor tortor.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+<entry>Vivamus eu dui ex.</entry>
+</row>
+</tbody>
+</tgroup></table>
+</section>
+<section>
+<title>Span tests</title>
+<table frame="all" rowsep="1" colsep="1" id="table_cwx_gss_2gc"><title>horizontal span
+test</title><desc>We expect certain cells (indicated as such), to span horizontally.</desc><tgroup
+cols="3">
+<colspec colnum="1" colwidth="1*" colname="c1"/>
+<colspec colnum="2" colwidth="1*" colname="c2"/>
+<colspec colnum="3" colwidth="1*" colname="c3"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry namest="c2" nameend="c3">This header cell spans on the last two column (c2/c3).</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry nameend="c3" namest="c1">This column spans on all three columns (c1/c2/c3). Let' add some
+text to test wraping: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a rutrum mauris.
+Quisque nec enim cursus, posuere enim non, mattis ligula. Etiam non hendrerit augue. Donec tincidunt
+pellentesque quam, in varius quam dictum vitae. Vestibulum luctus justo ut mauris vehicula eleifend.
+Nulla cursus velit in nunc faucibus, vel molestie ipsum aliquam. Curabitur in ullamcorper ipsum, et
+dignissim nibh. Proin elit urna, vulputate in pretium vel, malesuada a felis. Nullam eget fringilla
+sapien.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry nameend="c3" namest="c2" colsep="0">This column spans on the last tow columns of the table
+(c2/c3). Also, it has colsep set to 0, but it should still have a column separator because it is the
+last cell of the row because of the horizontal span.</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">This column spans on the first two columns of the table (c1/c2).
+Let' adds some text to test wraping: Mauris non nulla interdum, laoreet risus a, posuere
+ipsum.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry namest="c2" nameend="c3">This column spans on the last tow columns of the table (c2/c3). Let'
+adds some text to test wraping: Fusce quis tincidunt magna, eget laoreet metus. Fusce quis tincidunt
+magna, eget laoreet metus.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_kpm_kjt_2gc"><title>horizontal span with col
+width test</title><desc>We expect certain cells (indicated as such), to span horizontally and the
+third column to be twice the width of the 2 others.</desc><tgroup cols="3">
+<colspec colnum="1" colwidth="1*" colname="c1"/>
+<colspec colnum="2" colwidth="1*" colname="c2"/>
+<colspec colnum="3" colwidth="2*" colname="c3"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry namest="c2" nameend="c3">This header cell spans on the last two column (c2/c3).</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry nameend="c3" namest="c1">This column spans on all three columns (c1/c2/c3). Let' add some
+text to test wraping: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a rutrum mauris.
+Quisque nec enim cursus, posuere enim non, mattis ligula. Etiam non hendrerit augue. Donec tincidunt
+pellentesque quam, in varius quam dictum vitae. Vestibulum luctus justo ut mauris vehicula eleifend.
+Nulla cursus velit in nunc faucibus, vel molestie ipsum aliquam. Curabitur in ullamcorper ipsum, et
+dignissim nibh. Proin elit urna, vulputate in pretium vel, malesuada a felis. Nullam eget fringilla
+sapien.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry>Fusce quis tincidunt magna, eget laoreet metus. Fusce quis tincidunt magna, eget laoreet
+metus.</entry>
+<entry>This cell should be <b>twice</b> the width of the left once.</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">This column spans on the first two columns of the table (c1/c2).
+Let' adds some text to test wraping: Mauris non nulla interdum, laoreet risus a, posuere
+ipsum.</entry>
+<entry>This cell should be <b>the same width</b> as the left once, since it's spanned on column 1
+and 2, which are set to <codeph>1*</codeph>, while the shirt is set to <codeph>2*</codeph>.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry namest="c2" nameend="c3">This column spans on the last tow columns of the table (c2/c3). Let'
+adds some text to test wraping: Fusce quis tincidunt magna, eget laoreet metus. Fusce quis tincidunt
+magna, eget laoreet metus.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_cqp_4bx_2gc"><title>vertical span
+test</title><desc>We expect certain cells (indicated as such), to span vertically.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry>This header cell originally spanned vertically on 2 rows, and it does work with this code,
+but Oxygen complains because apparently you should not span celled from head to body, so I removed
+it.</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry morerows="1">This cell spans vertically on 2 rows.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry morerows="2">This cell spans vertically on 3 rows.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_u5d_zc1_fgc"><title>vertical span test with very
+high cell</title><desc>We expect certain cells (indicated as such), to span vertically or
+horizontal. The bottom right cell is very high and spanned on three rows, and should expand the last
+row to fit. We also valigned some cells to test alignment, they are indicated as such.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry>This header cell originally spanned vertically on 2 rows, and it does work with this code,
+but Oxygen complains because apparently you should not span celled from head to body, so I removed
+it.</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry morerows="1" valign="middle">This cell spans vertically on 2 rows and is vertically middle
+aligned.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry morerows="2">This cell spans vertically on 3 rows, and as very long test to see if it expand
+vertically the last of the three rows. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+a rutrum mauris. Quisque nec enim cursus, posuere enim non, mattis ligula. Etiam non hendrerit
+augue. Donec tincidunt pellentesque quam, in varius quam dictum vitae. Vestibulum luctus justo ut
+mauris vehicula eleifend. Nulla cursus velit in nunc faucibus, vel molestie ipsum aliquam. Curabitur
+in ullamcorper ipsum, et dignissim nibh. Proin elit urna, vulputate in pretium vel, malesuada a
+felis. Nullam eget fringilla sapien.</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c2">Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+</row>
+<row>
+<entry valign="bottom">This cell is vertically bottom aligned.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_glx_pl1_fgc"><title>vertical span with align
+middle test</title><desc>We expect certain cells (indicated as such), to span vertically, and to be
+either vertically middle or bottom aligned.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry morerows="1" valign="bottom">This cell spans vertically on 2 rows and is vertically bottom
+aligned.</entry>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry morerows="2" valign="middle">This cell spans vertically on 3 rows and is vertically middle
+aligned.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+</row>
+</tbody>
+</tgroup></table>
+<table frame="all" rowsep="1" colsep="1" id="table_j55_cm1_fgc"><title>vertical span with middle
+vertical align on tbody</title><desc>We expect certain cells (indicated as such), to span
+vertically, and all body cells to be vertically centered</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry>Col 2</entry>
+<entry>C 3</entry>
+</row>
+</thead>
+<tbody valign="middle">
+<row>
+<entry morerows="1">This cell spans vertically on 2 rows.</entry>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry>Fusce quis tincidunt magna, eget laoreet metus.</entry>
+<entry morerows="2">This cell spans vertically on 3 rows.</entry>
+</row>
+<row>
+<entry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Duis dictum felis vitae scelerisque dapibus.</entry>
+</row>
+<row>
+<entry>Phasellus tristique nibh orci.</entry>
+<entry>Curabitur finibus magna vel laoreet blandit.</entry>
+</row>
+</tbody>
+</tgroup></table>
+</section>
+<section>
+<title>All feature together</title>
+<table frame="all" rowsep="1" colsep="1" id="table_twv_zmc_fgc"><title>A bit of all cell features
+together</title><desc>This combined horizontal spanning, vertical spanning, row separators, column
+separator and vertical alignments rules. Each cell describes its behavior and expectations. It has
+an empty row at the end to test the empty row behavior.</desc><tgroup cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<colspec colnum="3" colname="c3" colwidth="1*" align="right"/>
+<thead>
+<row>
+<entry>Column 1 with me text to see the alignment of the other header cells</entry>
+<entry valign="middle" align="center">Col 2 (align/align centered)</entry>
+<entry>This column is right aligned</entry>
+</row>
+</thead>
+<tbody valign="middle">
+<row>
+<entry morerows="1">This row has rowsep set to 0.</entry>
+<entry rotate="0">Mauris non nulla interdum, laoreet risus a, posuere ipsum.</entry>
+<entry>Mauris sagittis eleifend libero ac euismod.</entry>
+</row>
+<row>
+<entry colsep="0">This cell as colsep set to 0, and should not have a separator on its right
+side</entry>
+<entry morerows="2">This cell spans vertically on 3 rows and is vertically middle aligned and right
+aligned from column spec.</entry>
+</row>
+<row rowsep="0">
+<entry>This row has rowsep set to 0.</entry>
+<entry>This row has rowsep set to 0. The cell on the right should not be affected since it is
+spanned on more rows</entry>
+</row>
+<row rowsep="1">
+<entry namest="c1" nameend="c2" align="center">This cell is horizontally spanned on two columns, and
+centered horizontally.</entry>
+</row>
+<row>
+<entry/>
+<entry/>
+<entry/>
+</row>
+</tbody>
+</tgroup></table>
+</section>
+<section>
+<title>Elements test</title>
+<table frame="all" rowsep="1" colsep="1" id="table_rjd_ngq_fgc"><title>Footnote offset
+test</title><desc>This table insert a few footnotes, to make sure the one in the last tables are
+correct indexed.</desc><tgroup cols="2">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<thead>
+<row>
+<entry>Col A</entry>
+<entry>Col B</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><fn>First footnote of the offset table</fn></entry>
+<entry><fn>Second footnote of the offset table.</fn></entry>
+</row>
+</tbody>
+</tgroup></table>
+<p>Just adding a couple of footnotes here, to make sure the offset for the table is working, since
+the counter for footnote is global to the topic, but the text-table plugin has access only to the
+table context. <fn>Footnote 1 in paragraph</fn><fn>Footnote 2 in paragraph</fn></p>
+<table frame="all" rowsep="1" colsep="1" id="table_eqk_24c_fgc"><title>element
+tests</title><desc>This is a test of many elements within a table, including a table within a table
+within an horizontal span. The first column should be half the width of others.</desc><tgroup
+cols="3">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="2*"/>
+<colspec colnum="3" colname="c3" colwidth="2*"/>
+<thead>
+<row>
+<entry>Element name</entry>
+<entry>Simple use</entry>
+<entry>More complex</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Paragraph</entry>
+<entry>
+<p>I am a very simple paragraph, with still a bit of content to test wrapping as always,.</p>
+</entry>
+<entry>
+<p>This is a paragraph, and it has some content to see if it wraps fine. It will be followed by
+another paragraph to see how they behave together.</p>
+<p>Here is another paragraph, to make this more interesting, this will content a unordered list
+following the next semi-colon:<ul>
+<li>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</li>
+<li>Item 2: short item to see</li>
+<li>Item 3</li>
+</ul></p>
+</entry>
+</row>
+<row>
+<entry>ul</entry>
+<entry>
+<ul>
+<li>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</li>
+<li>Item 2: short item to see</li>
+<li>Item 3</li>
+</ul>
+</entry>
+<entry>
+<ul>
+<li>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</li>
+<li>Item 2: I contain another list:<ul>
+<li>Sub-item 1</li>
+<li>Sub-item 2</li>
+</ul></li>
+<li>Item 3</li>
+</ul>
+</entry>
+</row>
+<row>
+<entry>ol</entry>
+<entry>
+<ol>
+<li>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</li>
+<li>Item 2: short item to see</li>
+<li>Item 3</li>
+</ol>
+</entry>
+<entry>
+<ol>
+<li>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</li>
+<li>Item 2: I contain another list:<ul>
+<li>Sub-item 1</li>
+<li>Sub-item 2</li>
+</ul></li>
+<li>Item 3</li>
+</ol>
+</entry>
+</row>
+<row>
+<entry>sl</entry>
+<entry>
+<sl>
+<sli>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</sli>
+<sli>Item 2: short item to see</sli>
+<sli>Item 3</sli>
+</sl>
+</entry>
+<entry>
+<sl>
+<sli>Item 1: item 1 is a long item, to see how the wrapping behave, see if we have a nice
+identification below the prefix.</sli>
+<sli>Item 2: I contain </sli>
+<sli>Item 3</sli>
+</sl>
+</entry>
+</row>
+<row>
+<entry>codeblock</entry>
+<entry>
+<codeblock>function add(a: number, b: number) {
+  return a + b;
+}</codeblock>
+</entry>
+<entry>
+<codeblock>function add(a: number, b: number) {
+  return a + b;
+}</codeblock>
+</entry>
+</row>
+<row>
+<entry>dl</entry>
+<entry>
+<dl>
+<dlentry>
+<dt>first term</dt>
+<dd>Some definition</dd>
+</dlentry>
+<dlentry>
+<dt>second term</dt>
+<dd>Another definition</dd>
+</dlentry>
+</dl>
+</entry>
+<entry>
+<dl>
+<dlentry>
+<dt>first term</dt>
+<dd>Some definition</dd>
+<dd>Another definition for the same term. The description is long test wrapping ass well.</dd>
+</dlentry>
+<dlentry>
+<dt>second term</dt>
+<dd>Another definition</dd>
+</dlentry>
+<dlentry>
+<dt>third term with embedded dl</dt>
+<dd>
+<dl>
+<dlentry>
+<dt>sub-term</dt>
+<dd>A sub-definition</dd>
+</dlentry>
+</dl>
+</dd>
+</dlentry>
+<dlentry>
+<dt>fourth term</dt>
+<dd>Definition for the fourth term.</dd>
+</dlentry>
+</dl>
+</entry>
+</row>
+<row>
+<entry>cite</entry>
+<entry><cite>This is a citation</cite></entry>
+<entry><cite>This is a citation containing an <apiname>apiname</apiname>, a <b>bold</b>, a
+<codeph>codeph</codeph>, a <filepath>filepath</filepath>, a <i>italic word</i>,
+<keyword>keyword</keyword>, a <line-through>line-through</line-through>, a <msgnum>msgnum</msgnum>,
+a <msgph>msgph</msgph>, an <option>option</option>, an <overline>overline</overline>, a
+<parmname>parmname</parmname>, a <ph>ph</ph>, a <q>q</q>, a <sub>sub</sub>, a <sup>sup</sup>, a
+<synph>synph</synph>, a <systemoutput>systemoutput</systemoutput>, a <term>term</term>, a
+<text>text</text>, a <textentity>textentity</textentity>, a <tm tmtype="tm">tm</tm> , a <tt>tt</tt>,
+a <u>u</u>, <uicontrol>uicontrol</uicontrol>, a <userinput>userinput</userinput>, a
+<varname>varname</varname></cite></entry>
+</row>
+<row>
+<entry>apiname</entry>
+<entry><apiname>this is an apiname</apiname></entry>
+<entry><apiname>This apiname contains a <text>text</text> element.</apiname></entry>
+</row>
+<row>
+<entry>filepath</entry>
+<entry><filepath>this is a filepath</filepath></entry>
+<entry><filepath><varname>varname</varname>/<term>term</term>/<option>option</option>/<keyword>keyrowrd</keyword></filepath></entry>
+</row>
+<row>
+<entry>italic</entry>
+<entry><i>this text is in italic</i></entry>
+<entry><i>This italic text contains an <apiname>apiname</apiname>, a <b>bold</b>, a
+<cite>cite</cite>, a <codeph>codeph</codeph>, a <filepath>filepath</filepath>, a
+<line-through>line-through</line-through>, a <keyword>keyword</keyword>, a <msgnum>msgnum</msgnum>,
+a <msgph>msgph</msgph>, an <option>option</option>, an <overline>overline</overline>, a
+<parmname>parmnamne</parmname>, a <ph>ph</ph>, a <q>q</q>, a <sub>sub</sub>, a <sup>sup</sup>, a
+<synph>synph</synph>, a <systemoutput>systemoutput</systemoutput>, a <term>term</term>, a
+<text>text</text>, a <textentity>textentity</textentity>, a <tm tmtype="tm">tm</tm> , a <tt>tt</tt>,
+a <u>u</u>, <uicontrol>uicontrol</uicontrol>, a <userinput>userinput</userinput>, a
+<varname>varname</varname></i></entry>
+</row>
+<row>
+<entry>keyword</entry>
+<entry><keyword>This is a keyword</keyword></entry>
+<entry/>
+</row>
+<row>
+<entry>image</entry>
+<entry><image href="dita-logo.png" width="100"><alt>Alternative text describing the DITA-OT
+logo</alt></image></entry>
+<entry><image href="dita-logo.png" width="100"
+alt="Alternative text set as attribute, which is depcreated but we still support"/></entry>
+</row>
+<row>
+<entry>fn (footnote)</entry>
+<entry><fn>This is a first footnote in the final table</fn></entry>
+<entry/>
+</row>
+<row>
+<entry>lines</entry>
+<entry>
+<lines>This
+is
+a
+lines
+element
+And   this   line   has   3   spaces   between   each   word.</lines>
+</entry>
+<entry/>
+</row>
+<row>
+<entry>pre</entry>
+<entry>
+<pre>This
+is
+a
+pre
+block
+with
+line
+breaks</pre>
+</entry>
+<entry>
+<pre>This   sentence   has   3   spaces   between   each   word
+This is a <fn>footnote in the pre of the final table</fn>
+This is a <keyword>keyword</keyword>
+This is a <parmname>parmname</parmname>
+This is a <q>q</q>
+This is a <ph>ph</ph>
+This is a <apiname>apiname</apiname>
+This is a <b>b</b>
+This is a <cite>cite</cite>
+This is a <cmdname>cmdname</cmdname>
+This is a <filepath>filepath</filepath>
+This is a <i>italic word</i>
+This is a <line-through>line-through</line-through>
+This is a <msgnum>msgnum</msgnum>
+This is a <msgph>msgph</msgph>
+This is an <option>option</option>
+This is a <overline>overline</overline>
+This is a <sub>sub</sub>
+This is a <sup>sup</sup>
+This is a <synph>synph</synph></pre>
+</entry>
+</row>
+<row>
+<entry>tm</entry>
+<entry><tm tmtype="reg">Registered</tm>, <tm tmtype="tm">Trademark</tm>, <tm tmtype="service"
+>Service</tm></entry>
+<entry/>
+</row>
+<row>
+<entry>table</entry>
+<entry namest="c2" nameend="c3">
+<p>
+<table frame="all" rowsep="1" colsep="1" id="table_ipq_q4h_fgc"><title>Table within
+table</title><tgroup cols="2">
+<colspec colnum="1" colname="c1" colwidth="1*"/>
+<colspec colnum="2" colname="c2" colwidth="1*"/>
+<thead>
+<row>
+<entry>Name</entry>
+<entry>Role</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>Guillaume</entry>
+<entry>Dev</entry>
+</row>
+<row>
+<entry>John</entry>
+<entry>PO</entry>
+</row>
+<row>
+<entry>Jane</entry>
+<entry>PM</entry>
+</row>
+</tbody>
+</tgroup></table>
+</p>
+</entry>
+</row>
+<row>
+<entry>simpletable</entry>
+<entry namest="c2" nameend="c3">
+<p>
+<simpletable frame="all" relcolwidth="1* 1*">
+<sthead>
+<stentry>Column A</stentry>
+<stentry>Column B</stentry>
+</sthead>
+<strow>
+<stentry>Value A</stentry>
+<stentry>Value B</stentry>
+</strow>
+<strow>
+<stentry>Value C</stentry>
+<stentry>Value D</stentry>
+</strow>
+</simpletable>
+</p>
+</entry>
+</row>
+<row>
+<entry>syntax diagram</entry>
+<entry namest="c2" nameend="c3">
+<syntaxdiagram>
+<groupseq>
+<var importance="optional">required_item</var>
+</groupseq>
+</syntaxdiagram>
+</entry>
+</row>
+<row>
+<entry>long syntax diagram</entry>
+<entry namest="c2" nameend="c3">
+<syntaxdiagram>
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupchoice importance="optional">
+<groupseq>
+<var>optional_choice</var>
+<groupchoice importance="required">
+<var importance="default">default_choice</var>
+<var>required_choice</var>
+<var>required_choice</var>
+</groupchoice>
+</groupseq>
+<groupseq>
+<var>optional_choice</var>
+<groupchoice importance="required">
+<var importance="default">default_choice</var>
+<var>required_choice</var>
+<var>required_choice</var>
+</groupchoice>
+</groupseq>
+</groupchoice>
+</syntaxdiagram>
+</entry>
+</row>
+</tbody>
+</tgroup></table>
+</section>
+</body>
+</topic>

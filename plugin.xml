@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.dita.text-asciiart">
+    <feature extension="package.version" value="1.0.0"/>
+    <!-- Hook ourselves on step 1 (DITA -> AST) to extract table to temporary files -->
+    <feature extension="dita.xsl.text.ast" file="xsl/step1-extract-elements.xsl"/>
+    <!-- Hook ourselves on step 2 (AST -> TXT) to re-insert generated text table -->
+    <feature extension="dita.xsl.text" file="xsl/step2-insert-elements.xsl"/>
+    <!-- Hook ourselves before step 2 (AST -> TXT) to process the temporary files and generate text tables -->
+    <feature extension="depend.org.dita.text.pre" value="table2ascii"/>
+    <!-- And fo course make sure the ant target we injected just above is available -->
+    <feature extension="ant.import" file="build_table2ascii.xml"/>
+    <!-- Option to disable UTf-8 Trademark characters in case users don't want them -->
+    <param name="args.text.notm" desc="Disable the trademark symbol in the table text output" type="enum">
+        <val>yes</val>
+        <val default="true">no</val>
+    </param>
+    
+    <!-- ant contrib required for the foreach task -->
+    <require plugin="org.jung.ant-contrib"/>
+    
+</plugin>

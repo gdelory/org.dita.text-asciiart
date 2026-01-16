@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept
+PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="syntax" xml:lang="en-us">
+  <title>How to read syntax diagrams
+  </title>
+  <shortdesc>Learn how to read syntax diagrams.
+  </shortdesc>
+  <conbody>
+    <ul>
+      <li>If punctuation marks, parentheses, arithmetic operators, or other such symbols are shown, enter
+        them as part of the syntax.
+      </li>
+      <li>Required items appear on the horizontal line (the main path). <codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;delim>required-item&lt;/delim>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram>
+<groupseq>
+<delim>required-item</delim>
+</groupseq>
+</syntaxdiagram>
+</li>
+      <li>Optional items appear below the main path. <codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;delim>required-item&lt;/delim>
+  &lt;/groupseq>
+  &lt;groupseq>
+    &lt;delim importance="optional">optional-item&lt;/delim>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram>
+<groupseq>
+<delim>required-item</delim>
+</groupseq>
+<groupseq>
+<delim importance="optional">optional-item</delim>
+</groupseq>
+</syntaxdiagram>
+</li>
+      <li>If an item appears above the main path, that item is a default; it takes effect if nothing
+else in that position is specified. <codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;kwd importance="required">required-item&lt;/kwd>
+  &lt;/groupseq>
+  &lt;groupseq>
+    &lt;kwd importance="default">default-item&lt;/kwd>
+  &lt;/groupseq>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupseq>
+<kwd importance="required">required-item</kwd>
+</groupseq>
+<groupseq>
+<kwd importance="default">default-item</kwd>
+</groupseq>
+</syntaxdiagram>
+</li>
+      <li>If more than one item can be chosen, they appear vertically, in a stack. <codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;kwd>optional-choice-1&lt;/kwd>
+    &lt;kwd>optional-choice-2&lt;/kwd>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupchoice>
+<kwd>optional-choice-1</kwd>
+<kwd>optional-choice-2</kwd>
+</groupchoice>
+</syntaxdiagram>
+<p>If one of the items must be chosen, one item of the stack appears on the main path. If choosing
+any of the items is optional, the group itself can be marked as optional, the entire stack then
+appears below the main path. </p>
+<codeblock outputclass="language-xml">
+  &lt;syntaxdiagram>
+  &lt;groupchoice importance="optional">
+    &lt;var>optional_choice&lt;/var>
+    &lt;var>optional_choice&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupchoice importance="optional">
+<var>optional_choice</var>
+<var>optional_choice</var>
+</groupchoice>
+</syntaxdiagram>
+<p>If one of the items is the default, it will appear above the main path and the remaining choices
+will be shown below. </p>
+<codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupchoice importance="optional">
+    &lt;var importance="default">default_choice&lt;/var>
+    &lt;var>optional_choice&lt;/var>
+    &lt;var>optional_choice&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupchoice importance="optional">
+<var importance="default">default_choice </var>
+<var>optional_choice </var>
+<var>optional_choice </var>
+</groupchoice>
+</syntaxdiagram>
+<p>If an optional item has a default when it is not specified, the default appears above the main
+path. </p>
+<codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupchoice importance="optional">
+    &lt;groupseq>
+      &lt;var>optional_choice&lt;/var>
+      &lt;groupchoice importance="required">
+        &lt;var importance="default">default_choice&lt;/var>
+        &lt;var>required_choice&lt;/var>
+        &lt;var>required_choice&lt;/var>
+      &lt;/groupchoice>
+    &lt;/groupseq>
+    &lt;var>optional_choice&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupchoice importance="optional">
+<groupseq>
+<var>optional_choice</var>
+<groupchoice importance="required">
+<var importance="default">default_choice</var>
+<var>required_choice</var>
+<var>required_choice</var>
+</groupchoice>
+</groupseq>
+<var>optional_choice</var>
+</groupchoice>
+</syntaxdiagram><p>Note that if a group choice if more complex and contains items with their own
+path, then it takes pipes to separates items.</p>
+<codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupchoice importance="optional">
+    &lt;groupseq>
+      &lt;var>optional_choice&lt;/var>
+      &lt;groupchoice importance="required">
+        &lt;var importance="default">default_choice&lt;/var>
+        &lt;var>required_choice&lt;/var>
+        &lt;var>required_choice&lt;/var>
+      &lt;/groupchoice>
+    &lt;/groupseq>
+    &lt;groupseq>
+      &lt;var>optional_choice&lt;/var>
+      &lt;groupchoice importance="required">
+        &lt;var importance="default">default_choice&lt;/var>
+        &lt;var>required_choice&lt;/var>
+        &lt;var>required_choice&lt;/var>
+      &lt;/groupchoice>
+    &lt;/groupseq>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram id="syntaxdiagram_mxt_sdz_ggc">
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupchoice importance="optional">
+<groupseq>
+<var>optional_choice</var>
+<groupchoice importance="required">
+<var importance="default">default_choice</var>
+<var>required_choice</var>
+<var>required_choice</var>
+</groupchoice>
+</groupseq>
+<groupseq>
+<var>optional_choice</var>
+<groupchoice importance="required">
+<var importance="default">default_choice</var>
+<var>required_choice</var>
+<var>required_choice</var>
+</groupchoice>
+</groupseq>
+</groupchoice>
+</syntaxdiagram>
+</li>
+      <li>An arrow returning to the left, above the main line, indicates an item that can be
+repeated. <codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupseq>
+    &lt;repsep/>
+    &lt;var importance="required">repeatable_item&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupseq>
+<repsep/>
+<var importance="required">repeatable_item</var>
+</groupseq>
+</syntaxdiagram>
+<p>If the repeat arrow contains a comma, you must separate repeated items with a comma. </p>
+<codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupseq>
+    &lt;repsep>,&lt;/repsep>
+    &lt;var importance="required">repeatable_item&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupseq>
+<repsep>,</repsep>
+<var importance="required">repeatable_item</var>
+</groupseq>
+</syntaxdiagram>
+<p>A repeat arrow above a stack indicates that you can repeat the items in the stack. </p>
+</li>
+      <li>The syntax diagrams only contain the preferred or standard keywords. If non-standard synonyms
+        are supported in addition to the standard keywords, they are described in the
+        <uicontrol>Notes
+        </uicontrol> sections instead of the syntax diagrams. For maximum portability, only
+        the preferred or standard keywords should be used.
+      </li>
+      <li>Sometimes a single variable represents a larger fragment of the syntax. For example, in
+the following diagram, the variable <codeph>parameter-block </codeph> represents the whole syntax
+fragment that is labeled <uicontrol>parameter-block </uicontrol>: <codeblock outputclass="language-xml">
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;fragref>parameter-block&lt;/fragref>
+  &lt;fragment>
+    &lt;title>parameter-block&lt;/title>
+    &lt;groupchoice>
+      &lt;var>parameter1&lt;/var>
+      &lt;groupseq>
+        &lt;var>parameter2&lt;/var>
+        &lt;groupchoice>
+          &lt;var>parameter3&lt;/var>
+          &lt;var>parameter4&lt;/var>
+        &lt;/groupchoice>
+      &lt;/groupseq>
+    &lt;/groupchoice>
+  &lt;/fragment>
+&lt;/syntaxdiagram>
+        </codeblock>
+<syntaxdiagram>
+<groupseq>
+<var>required_item </var>
+</groupseq>
+<fragref>parameter-block </fragref>
+<fragment>
+<title>parameter-block </title>
+<groupchoice>
+<var>parameter1 </var>
+<groupseq>
+<var>parameter2 </var>
+<groupchoice>
+<var>parameter3 </var>
+<var>parameter4 </var>
+</groupchoice>
+</groupseq>
+</groupchoice>
+</fragment>
+</syntaxdiagram>
+</li>
+    </ul>
+<section>
+<title>Implementation tests</title>
+<p>Groupchoice with default importance. It doesn't make sense to set the whole group choice above
+the main path, because what would it really mean? What would the group resolve to without any actual
+choice from the user. This is why if the whole group has the default importance, the first entry in
+the group without optional or required importance will be used as default, unless there is some
+items explicitly set as default, in which case they will be used as default, and the default
+importance of the group has no effect.</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupseq>
+    &lt;groupchoice importance="default">
+      &lt;var>default_1&lt;/var>
+      &lt;var>default_2&lt;/var>
+    &lt;/groupchoice>
+    &lt;var>choice_1&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_wsp_mrk_ggc">
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupseq>
+<groupchoice importance="default">
+<var>default_1</var>
+<var>default_2</var>
+</groupchoice><var>choice_1</var>
+</groupseq>
+</syntaxdiagram>
+<p>Groupchoice as default for a group choice. The default importance attribute is caught be the
+parent group choice, which means the whole inner group choice will be default of the parent group
+choice, and the inner group doens't have a default since the attribute was already consumed by the
+parent group.</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupchoice>
+    &lt;groupchoice importance="default">
+      &lt;var>default_1&lt;/var>
+      &lt;var>default_2&lt;/var>
+    &lt;/groupchoice>
+    &lt;var>choice_1&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_yk2_q5k_ggc">
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupchoice>
+<groupchoice importance="default">
+<var>default_1</var>
+<var>default_2</var>
+</groupchoice>
+<var>choice_1</var>
+</groupchoice>
+</syntaxdiagram>
+</section>
+    <section>
+      <title>Test fragments
+      </title>
+      <p>Test fragment reference by title </p>
+<codeblock>
+&lt;syntaxdiagram id="syntaxdiagram_lx1_jmd_ggc">
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;fragref>parameter-block&lt;/fragref>
+    &lt;fragment>
+    &lt;title>parameter-block&lt;/title>
+    &lt;groupchoice>
+      &lt;var>parameter1&lt;/var>
+      &lt;groupseq>
+        &lt;var>parameter2&lt;/var>
+        &lt;groupchoice>
+          &lt;var>parameter3&lt;/var>
+          &lt;var>parameter4&lt;/var>
+        &lt;/groupchoice>
+      &lt;/groupseq>
+    &lt;/groupchoice>
+   &lt;/fragment>
+ &lt;/syntaxdiagram></codeblock>
+      <syntaxdiagram id="syntaxdiagram_lx1_jmd_ggc">
+        <groupseq>
+          <var>required_item</var>
+        </groupseq>
+        <fragref>parameter-block</fragref>
+        <fragment>
+          <title>parameter-block</title>
+          <groupchoice>
+            <var>parameter1</var>
+            <groupseq>
+              <var>parameter2</var>
+              <groupchoice>
+                <var>parameter3</var>
+                <var>parameter4</var>
+              </groupchoice>
+            </groupseq>
+          </groupchoice>
+        </fragment>
+      </syntaxdiagram>
+<p>Test synnote</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupchoice>
+    &lt;var>parameter1&lt;/var>
+    &lt;groupseq>
+      &lt;var>parameter2&lt;/var>
+      &lt;groupchoice>
+        &lt;var>parameter3&lt;/var>
+        &lt;var>parameter4&lt;/var>
+      &lt;/groupchoice>
+    &lt;/groupseq>
+    &lt;synnote>This is a note&lt;/synnote>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_nym_532_ggc">
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupchoice><var>parameter1</var><groupseq>
+<var>parameter2</var>
+<groupchoice>
+<var>parameter3</var>
+<var>parameter4</var>
+</groupchoice>
+</groupseq><synnote>This is a note</synnote></groupchoice>
+</syntaxdiagram>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupchoice>
+    &lt;var>parameter1&lt;/var>
+    &lt;groupseq>
+      &lt;var>parameter2&lt;/var>
+      &lt;synnoteref href="#syntax/my_synnote"/>
+      &lt;groupchoice>
+        &lt;var>parameter3&lt;/var>
+        &lt;var>parameter4&lt;/var>
+      &lt;/groupchoice>
+    &lt;/groupseq>
+  &lt;/groupchoice>
+  &lt;synnote id="my_synnote">This is a note&lt;/synnote>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_nsp_3j2_ggc">
+<groupseq>
+<var>required_item</var>
+</groupseq>
+<groupchoice>
+<var>parameter1</var>
+<groupseq>
+<var>parameter2</var>
+<synnoteref href="#syntax/my_synnote"/><groupchoice>
+<var>parameter3</var>
+<var>parameter4</var>
+</groupchoice>
+</groupseq>
+</groupchoice><synnote id="my_synnote">This is a note</synnote>
+</syntaxdiagram>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;synnote>Some note at the beginning of the syntax diagram&lt;/synnote>
+  &lt;groupseq>
+    &lt;synnote>Some note at the beginning of a groupseq&lt;/synnote>
+    &lt;var>required_item&lt;/var>
+  &lt;/groupseq>
+  &lt;groupchoice>
+    &lt;var>parameter1&lt;/var>
+    &lt;groupseq>
+      &lt;var>parameter2&lt;/var>
+      &lt;groupchoice>
+        &lt;synnote>This is a note at the beginning of a groupchoice&lt;/synnote>
+        &lt;var>parameter3&lt;/var>
+        &lt;var>parameter4&lt;/var>
+      &lt;/groupchoice>
+    &lt;/groupseq>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_tb3_d3c_hgc"><synnote>Some note at the beginning of the syntax
+diagram</synnote><groupseq><synnote>Some note at the beginning of a groupseq</synnote>
+<var>required_item</var>
+</groupseq><groupchoice>
+<var>parameter1</var>
+<groupseq>
+<var>parameter2</var>
+<groupchoice><synnote>This is a note at the beginning of a
+groupchoice</synnote><var>parameter3</var><var>parameter4</var></groupchoice>
+</groupseq>
+</groupchoice></syntaxdiagram>
+<p>Basic test cases</p>
+<p>One <b>groupseq </b>with few items. A group is a logical set of pieces of syntax that go
+together. Within the syntax definition, groups of keywords, delimiters and other syntax units act as
+a combined unit, and they occur in a specific sequence, as delimited by the &lt;groupseq> element. </p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq>
+    &lt;delim>a_delim&lt;/delim>
+    &lt;kwd>a_kwd&lt;/kwd>
+    &lt;oper>an_oper&lt;/oper>
+    &lt;sep>a_sep&lt;/sep>
+    &lt;var>a_var&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_w3r_mn2_ggc">
+<groupseq>
+<delim>a_delim</delim><kwd>a_kwd</kwd><oper>an_oper</oper><sep>a_sep</sep><var>a_var</var></groupseq>
+</syntaxdiagram>
+<p>One <b>groupchoice</b> with few items. A group is a logical set of pieces of syntax that go
+together. A group choice specifies that the user must make a choice about which part of the syntax
+to use. Groups are often nested. </p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;delim>a_delim&lt;/delim>
+    &lt;kwd>a_kwd&lt;/kwd>
+    &lt;oper>an_oper&lt;/oper>
+    &lt;sep>a_sep&lt;/sep>
+    &lt;var>a_var&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_fvv_sn2_ggc">
+<groupchoice>
+<delim>a_delim</delim>
+<kwd>a_kwd</kwd>
+<oper>an_oper</oper>
+<sep>a_sep</sep>
+<var>a_var</var>
+</groupchoice>
+</syntaxdiagram>
+<p>One <b>groupccomp</b> with few items. A group is a logical set of pieces of syntax that go
+together. The group composite means that the items that make up the syntax diagram will be formatted
+close together rather than being separated by a horizontal or vertical line, which is the usual
+formatting method.</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupcomp>
+    &lt;delim>a_delim&lt;/delim>
+    &lt;kwd>a_kwd&lt;/kwd>
+    &lt;oper>an_oper&lt;/oper>
+    &lt;sep>a_sep&lt;/sep>
+    &lt;var>a_var&lt;/var>
+  &lt;/groupcomp>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_xlx_vn2_ggc">
+<groupcomp>
+<delim>a_delim</delim><kwd>a_kwd</kwd><oper>an_oper</oper><sep>a_sep</sep><var>a_var</var></groupcomp>
+</syntaxdiagram>
+<p><b>groupcomp test</b></p>
+<p>two default</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupcomp importance="default">
+    &lt;kwd>default 1&lt;/kwd>
+    &lt;var importance="default">default 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupcomp>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_ulv_5zf_ggc">
+<groupcomp importance="default">
+<kwd>default 1</kwd><var importance="default">default 2</var><var>variable 1</var></groupcomp>
+</syntaxdiagram>
+<p>two required</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupcomp importance="required">
+    &lt;kwd>required 1&lt;/kwd>
+    &lt;var importance="required">required 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupcomp>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_f45_r1g_ggc">
+<groupcomp importance="required">
+<kwd>required 1</kwd><var importance="required">required 2</var><var>variable 1</var></groupcomp>
+</syntaxdiagram>
+<p>two optional only</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupcomp importance="optional">
+    &lt;kwd>optional 1&lt;/kwd>
+    &lt;var importance="optional">optional 2&lt;/var>
+  &lt;/groupcomp>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_k4h_t1g_ggc">
+<groupcomp importance="optional">
+<kwd>optional 1</kwd><var importance="optional">optional 2</var></groupcomp>
+</syntaxdiagram>
+<p>two optional and one without important attribute</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupcomp importance="optional">
+    &lt;kwd>optional 1&lt;/kwd>
+    &lt;var importance="optional">optional 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupcomp>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_n4z_51g_ggc">
+<groupcomp importance="optional">
+<kwd>optional 1</kwd><var importance="optional">optional 2</var><var>variable 1</var></groupcomp>
+</syntaxdiagram>
+<p><b>groupchoice test</b></p>
+<p>two default</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice importance="default">
+    &lt;kwd>default 1&lt;/kwd>
+    &lt;var importance="default">default 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_svk_qbg_ggc">
+<groupchoice importance="default">
+<kwd>default 1</kwd>
+<var importance="default">default 2</var>
+<var>variable 1</var>
+</groupchoice>
+</syntaxdiagram>
+<p>two required</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice importance="required">
+    &lt;kwd>required 1&lt;/kwd>
+    &lt;var importance="required">required 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_tvk_qbg_ggc">
+<groupchoice importance="required">
+<kwd>required 1</kwd>
+<var importance="required">required 2</var>
+<var>variable 1</var>
+</groupchoice>
+</syntaxdiagram>
+<p>two optional only</p>
+<codeblock>
+&lt;syntaxdiagram >
+  &lt;groupchoice importance="optional">
+    &lt;kwd>optional 1&lt;/kwd>
+    &lt;var importance="optional">optional 2&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_uvk_qbg_ggc">
+<groupchoice importance="optional">
+<kwd>optional 1</kwd>
+<var importance="optional">optional 2</var>
+</groupchoice>
+</syntaxdiagram>
+<p>two optional and one without important attribute</p>
+<codeblock>
+&lt;syntaxdiagram >
+  &lt;groupchoice importance="optional">
+    &lt;kwd>optional 1&lt;/kwd>
+    &lt;var importance="optional">optional 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_vvk_qbg_ggc">
+<groupchoice importance="optional">
+<kwd>optional 1</kwd>
+<var importance="optional">optional 2</var>
+<var>variable 1</var>
+</groupchoice>
+</syntaxdiagram>
+<p><b>groupseq test</b></p>
+<p>two default</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq importance="default">
+    &lt;kwd>default 1&lt;/kwd>
+    &lt;var importance="default">default 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_rcj_bmg_ggc">
+<groupseq importance="default">
+<kwd>default 1</kwd><var importance="default">default 2</var><var>variable 1</var></groupseq>
+</syntaxdiagram>
+<p>two required</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq importance="required">
+    &lt;kwd>required 1&lt;/kwd>
+    &lt;var importance="required">required 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_scj_bmg_ggc">
+<groupseq importance="required">
+<kwd>required 1</kwd><var importance="required">required 2</var><var>variable 1</var></groupseq>
+</syntaxdiagram>
+<p>two optional only</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq importance="optional">
+    &lt;kwd>optional 1&lt;/kwd>
+    &lt;var importance="optional">optional 2&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_tcj_bmg_ggc">
+<groupseq importance="optional">
+<kwd>optional 1</kwd><var importance="optional">optional 2</var></groupseq>
+</syntaxdiagram>
+<p>two optional and one without important attribute</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupseq importance="optional">
+    &lt;kwd>optional 1&lt;/kwd>
+    &lt;var importance="optional">optional 2&lt;/var>
+    &lt;var>variable 1&lt;/var>
+  &lt;/groupseq>
+&lt;/syntaxdiagram></codeblock>
+<syntaxdiagram id="syntaxdiagram_ucj_bmg_ggc">
+<groupseq importance="optional">
+<kwd>optional 1</kwd><var importance="optional">optional 2</var><var>variable 1</var></groupseq>
+</syntaxdiagram>
+<p>If the groupchoice is optional, all choices go below the main path, even if one entry is tagged as default</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice importance="optional">
+    &lt;var importance="default">default_choice&lt;/var>
+    &lt;var importance="required">required_choice&lt;/var>
+    &lt;var>no_importance_choice&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+</codeblock>
+<syntaxdiagram>
+  <groupchoice importance="optional">
+    <var importance="default">default_choice</var>
+    <var importance="required">required_choice</var>
+    <var>no_importance_choice</var>
+  </groupchoice>
+</syntaxdiagram>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;var importance="default">default_choice&lt;/var>
+    &lt;var importance="required">required_choice&lt;/var>
+    &lt;var>no_importance_choice&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+</codeblock>
+<syntaxdiagram id="syntaxdiagram_fxp_swk_ggc">
+<groupchoice>
+<var importance="default">default_choice</var>
+<var importance="required">required_choice</var>
+<var>no_importance_choice</var>
+</groupchoice>
+</syntaxdiagram>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;var importance="default">default_choice&lt;/var>
+    &lt;var>no_importance_choice&lt;/var>
+    &lt;var importance="required">required_choice&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+</codeblock>
+<syntaxdiagram id="syntaxdiagram_vpk_vwk_ggc">
+<groupchoice>
+<var importance="default">default_choice</var>
+<var>no_importance_choice</var>
+<var importance="required">required_choice</var>
+</groupchoice>
+</syntaxdiagram>
+<p>If all items are required or nothing, then the first one goes on the main path, and others
+below:</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;var importance="required">required_1&lt;/var>
+    &lt;var >nothing_1&lt;/var>
+    &lt;var importance="required">required_2&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+    <syntaxdiagram>
+    <groupchoice>
+    <var importance="required">required_1</var>
+    <var >nothing_1</var>
+    <var importance="required">required_2</var>
+    </groupchoice>
+    </syntaxdiagram>
+<p>If all items are optional, then same as the group itself being option, they all go below and
+nothing goes on the main path:</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;var importance="optional">optional_1&lt;/var>
+    &lt;var importance="optional">optional_2&lt;/var>
+    &lt;var importance="optional">optional_3&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+    <syntaxdiagram>
+    <groupchoice>
+    <var importance="optional">optional_1</var>
+    <var importance="optional">optional_2</var>
+    <var importance="optional">optional_3</var>
+    </groupchoice>
+    </syntaxdiagram>
+<p>If one or more is default, the first default goes above the main path, others go below the main
+path:</p>
+<codeblock>
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;var importance="optional">optional_1&lt;/var>
+    &lt;var importance="optional">optional_2&lt;/var>
+    &lt;var importance="optional">optional_3&lt;/var>
+    &lt;var importance="default">default_1&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram>
+
+&lt;syntaxdiagram>
+  &lt;groupchoice>
+    &lt;var importance="optional">optional_1&lt;/var>
+    &lt;var importance="optional">optional_2&lt;/var>
+    &lt;var importance="optional">optional_3&lt;/var>
+    &lt;var importance="default">default_1&lt;/var>
+    &lt;var importance="default">default_2&lt;/var>
+  &lt;/groupchoice>
+&lt;/syntaxdiagram></codeblock>
+    <syntaxdiagram>
+    <groupchoice>
+    <var importance="optional">optional_1</var>
+    <var importance="optional">optional_2</var>
+    <var importance="optional">optional_3</var>
+    <var importance="default">default_1</var>
+    </groupchoice>
+    </syntaxdiagram>
+    <syntaxdiagram>
+    <groupchoice>
+    <var importance="optional">optional_1</var>
+    <var importance="optional">optional_2</var>
+    <var importance="optional">optional_3</var>
+    <var importance="default">default_1</var>
+    <var importance="default">default_2</var>
+    </groupchoice>
+    </syntaxdiagram>
+    </section>
+  </conbody>
+</concept>

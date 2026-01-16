@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+ PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="simpletable-test" xml:lang="en-us">
+<title>Test simple tables</title>
+<shortdesc>This topics test all type of simple tables. </shortdesc>
+<body>
+<simpletable frame="all" relcolwidth="1* 1* 1*">
+<sthead>
+<stentry>Col 1</stentry>
+<stentry>Col 2</stentry>
+<stentry>Col 3</stentry>
+</sthead>
+<strow>
+<stentry>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</stentry>
+<stentry>Ut hendrerit nisi ut vehicula viverra.</stentry>
+<stentry>Mauris sagittis eleifend libero ac euismod.</stentry>
+</strow>
+<strow>
+<stentry>Fusce quis tincidunt magna, eget laoreet metus.</stentry>
+<stentry>Maecenas vestibulum nec ante ut molestie. Maecenas vestibulum nec ante ut
+molestie.</stentry>
+<stentry>Donec egestas nisl at eros ultrices suscipit.</stentry>
+</strow>
+<strow>
+<stentry>Mauris non nulla interdum, laoreet risus a, posuere ipsum.</stentry>
+<stentry>Duis dictum felis vitae scelerisque dapibus.</stentry>
+<stentry>Pellentesque et porttitor tortor.</stentry>
+</strow>
+<strow>
+<stentry>Phasellus tristique nibh orci.</stentry>
+<stentry>Curabitur finibus magna vel laoreet blandit.</stentry>
+<stentry>Vivamus eu dui ex.</stentry>
+</strow>
+</simpletable>
+</body>
+</topic>
